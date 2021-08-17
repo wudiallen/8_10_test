@@ -7,6 +7,7 @@ package com.example;
 public class aa {
     public static void main(String[] args) {
         System.out.println("SSS");
+        System.out.println("AAA");
     }
 }
 
