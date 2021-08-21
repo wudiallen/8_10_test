@@ -1,8 +1,6 @@
 package com.example;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -22,7 +20,19 @@ public class aa {
         nums.add(5);
         // null 2  3  null 2  4  5
         //nums.stream().filter(num -> num != null).distinct().mapToInt(i -> i*2).peek(System.out::println).skip(2).limit(3).sum();
-        List<Integer> collect = nums.stream().filter(num -> num != null).collect(Collectors.toList());
+        List<Integer> list = nums.stream().filter(num -> num != null).collect(Collectors.toList());
+        //加锁
+        Collections.synchronizedList(list);
+        //linklist
+        LinkedList<Integer> linkList =  new LinkedList<>();
+        linkList.addFirst(1);
+        linkList.addLast(2);
+        Integer integer = linkList.get(1);
+        //hashset
+        HashSet<Integer> hashSet = new HashSet<>();
+        Iterator<Integer> iterator = hashSet.iterator();
+        //linkHashSet
+        LinkedHashSet<Integer> linkedHashSet = new LinkedHashSet<>();
 
     }
 }
