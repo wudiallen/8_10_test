@@ -8,8 +8,8 @@ package com.method;
  */
 public class ErFenSearch {
     public static void main(String[] args) {
-    int[] arr = new int[]{1,44,56,345,346,445,449,543,566,568,600,666};
-        Integer integer = erFenSearch(arr, 200);
+        int[] arr = new int[]{1, 44, 56, 345, 346, 445, 449, 543, 566, 568, 600, 666,1212,1213,1214,1215,1222,1223,1224,1225,1226,1227};
+        Integer integer = erFenSearch(arr, 449);
         System.out.println(integer);
     }
 
@@ -17,7 +17,7 @@ public class ErFenSearch {
         //初始
         int lo = 0;
         //最后
-        int hi = arr.length-1;
+        int hi = arr.length - 1;
         //中间数
         int mid = (lo + hi) / 2;
 
@@ -30,10 +30,11 @@ public class ErFenSearch {
             if (arr[mid] > num) {
                 hi = mid - 1;
             }
-            if (arr[mid] == num){
+            if (arr[mid] == num) {
                 return mid;
             }
-            System.out.println("正在计算");
+            mid  = (lo+hi)/2;
+            System.out.println("正在计算"+lo+" "  +hi);
         }
         return -1;
     }
