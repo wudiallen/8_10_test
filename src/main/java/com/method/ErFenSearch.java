@@ -13,7 +13,7 @@ public class ErFenSearch {
         System.out.println(integer);
     }
 
-    public static Integer erFenSearch(int[] arr, int num) {
+    private static Integer erFenSearch(int[] arr, int num) {
         //初始
         int lo = 0;
         //最后
@@ -32,7 +32,7 @@ public class ErFenSearch {
                 hi = mid - 1;
             }
             if (arr[mid] == num) {
-                return mid;
+                return mid+1;
             }
 
             System.out.println("正在计算"+lo+" "  +hi);
