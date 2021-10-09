@@ -20,7 +20,7 @@ public class aa {
         nums.add(5);
         // null 2  3  null 2  4  5
         //nums.stream().filter(num -> num != null).distinct().mapToInt(i -> i*2).peek(System.out::println).skip(2).limit(3).sum();
-        List<Integer> list = nums.stream().filter(num -> num != null).collect(Collectors.toList());
+        List<Integer> list = nums.stream().filter(e -> e != null).collect(Collectors.toList());
         //加锁
         Collections.synchronizedList(list);
         //linklist
@@ -34,6 +34,11 @@ public class aa {
         //linkHashSet
         LinkedHashSet<Integer> linkedHashSet = new LinkedHashSet<>();
 
+        Thread thread = new Thread();
+        thread.setDaemon(true);
+        Thread thread1 = new Thread();
+
+        String string = new String();
     }
 }
 
