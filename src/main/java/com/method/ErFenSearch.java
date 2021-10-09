@@ -19,9 +19,10 @@ public class ErFenSearch {
         //最后
         int hi = arr.length - 1;
         //中间数
-        int mid = (lo + hi) / 2;
+        int mid ;
 
         while (lo <= hi) {
+            mid  = (lo+hi)/2;
             //传入的数比中间数大
             if (arr[mid] < num) {
                 lo = mid + 1;
@@ -33,7 +34,7 @@ public class ErFenSearch {
             if (arr[mid] == num) {
                 return mid;
             }
-            mid  = (lo+hi)/2;
+
             System.out.println("正在计算"+lo+" "  +hi);
         }
         return -1;
