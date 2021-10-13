@@ -8,7 +8,7 @@ package com.method;
  */
 public class KuaiSu {
     public static void main(String[] args) {
-        int[] arr = new int[]{24, 12, 14, 66, 14, 15, 16, 66, 100, 2, 121, 11};
+        int[] arr = new int[]{20,21,5,90,6};
         kuaiSuPaixu(arr);
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + "  ");
@@ -31,23 +31,28 @@ public class KuaiSu {
         int end = heigh;
         int key = arr[low];
 
-        while (start != end) {
+        while (start < end) {
             while (arr[end] >= key && start < end) {
                 end--;
             }
             while (arr[start] <= key && start < end) {
                 start++;
             }
+            //找到了 右边比key小的值，
+            //找到了 左边比key大的值
             if (start < end) {
                 int temp = arr[start];
                 arr[start] = arr[end];
                 arr[end] = temp;
             }
         }
+        // 将基准数放到中间的位置（基准数归位）
         arr[low] = arr[start];
         arr[start] = key;
+        // 递归，继续向基准的左右两边执行和上面同样的操作
+        // start的索引处为上面已确定好的基准值的位置，无需再处理 24, 12, 14, 66, 14, 15, 16, 66, 100, 2, 121, 11
         sort(arr, low, start - 1);
-        sort(arr, end + 1, heigh);
+        sort(arr, start + 1, heigh);
 
     }
 }
