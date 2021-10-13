@@ -14,8 +14,6 @@ public class ChaRu {
             System.out.print(arr[i]+"  ");
         }
     }
-
-
     /**
      *插入排序   从小到大
      */
