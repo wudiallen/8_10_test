@@ -24,14 +24,17 @@ public class Method1 {
     }
 
     /**
-     * 判断函数中  有没有num
+     * 判断函数中  有没有num   从右上角开始时查找
      */
-    private static  boolean method1(int[][] arr, int num) {
+    private static boolean method1(int[][] arr, int num) {
+        //考虑数组为null
+        if (arr == null || arr.length < 1 || arr[0].length < 1) {
+            return false;
+        }
+
         boolean find = false;
         //列
         int column = arr[0].length - 1;
-        //行
-        //int row = arr.length-1;
         int row = 0;
         while (column >= 0 && (row <= arr.length - 1)) {
             if (arr[row][column] == num) {
@@ -40,11 +43,32 @@ public class Method1 {
                 return find;
             } else if (arr[row][column] < num) {
                 row++;
-            }else {
+            } else {
                 column--;
             }
         }
         return find;
+    }
+
+    /**
+     * 遍历整个数组   未优化
+     * @param arr
+     * @param num
+     * @return
+     */
+    private static boolean method2(int[][] arr, int num) {
+        //考虑数组为null
+       /* if (arr == null || arr.length < 1 || arr[0].length < 1) {
+            return false;
+        }*/
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                if (arr[i][j] == num) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
 }
