@@ -11,6 +11,7 @@ public class ErFenSearch {
         int[] arr = new int[]{1, 44, 56, 345, 346, 445, 449, 543, 566, 568, 600, 666,1212,1213,1214,1215,1222,1223,1224,1225,1226,1227};
         Integer integer = erFenSearch(arr, 449);
         System.out.println(integer);
+
     }
 
     private static Integer erFenSearch(int[] arr, int num) {
