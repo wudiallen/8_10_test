@@ -1,5 +1,6 @@
 package com.calendar;
 
+import com.TestInterfave;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
@@ -11,7 +12,7 @@ import java.util.Date;
  * @author songchao
  * @date 2021/9/28 15:49
  */
-public class CalendarTest {
+public class CalendarTest implements TestInterfave {
 
     public static void main(String[] args) {
         Calendar calendar = Calendar.getInstance();
@@ -25,5 +26,10 @@ public class CalendarTest {
         String format = date2.format(dateTimeFormatter);
 
         System.out.println(format);
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("在吃饭");
     }
 }

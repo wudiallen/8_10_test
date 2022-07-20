@@ -1,5 +1,9 @@
 package com.method;
 
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+
 /**
  * 二分查找
  *
@@ -30,6 +34,7 @@ public class ErFenSearch {
             }
             //传入的数比中间数小
             if (arr[mid] > num) {
+
                 hi = mid - 1;
             }
             if (arr[mid] == num) {
